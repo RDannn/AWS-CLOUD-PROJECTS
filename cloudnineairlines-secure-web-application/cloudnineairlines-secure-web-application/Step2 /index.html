@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Frequent Flyer</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Frequent Flyer</h1>
+        <div class="image-container">
+            <img src="frequentflyer.jpeg" alt="Frequent Flyer" class="flyer-image">
+        </div>
+        <p class="availability-zone" id="availability-zone"></p>
+        <p>Your gateway to the skies!</p>
+    </div>
+
+    <script>
+        // JavaScript to randomly alternate between us-east-1a and us-east-1b
+        const zones = ["Content Delivered From: us-east-1a", "Content Delivered From: us-east-1b"];
+        const randomZone = zones[Math.floor(Math.random() * zones.length)];
+        document.getElementById("availability-zone").textContent = randomZone;
+    </script>
+</body>
+</html>

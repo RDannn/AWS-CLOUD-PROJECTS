@@ -1,0 +1,74 @@
+Step 1: Setting Up VPC, Subnets, and Security Groups
+Creating the VPC and Subnets
+
+Screenshot: vpc.png
+Screenshot: vpc with subnets private public.png
+Configuring Security Groups for Instances and Load Balancers
+
+Screenshot: security group frontend.png
+Screenshot: security group backend.png
+Elastic IP Configuration
+
+Screenshot: elastic ip config.png
+Step 2: Setting Up the ACM Certificate and Route 53
+Requesting ACM Certificate
+
+Screenshot: acm request certificate.png
+Screenshot: acm pending verification.png
+Screenshot: acm issued.png
+Configuring Route 53 DNS Records for Domain Verification
+
+Screenshot: route 53 dns record.png
+Screenshot: 2 public domain names for acm certificate.png
+Step 3: Setting Up Auto Scaling Group, ALB, and CloudFront
+Configuring Auto Scaling Group
+
+Screenshot: create asg.png
+Screenshot: asg settings private subnets.png
+Creating ALB and Target Group Configuration
+
+Screenshot: create alb.png
+Screenshot: ALB target group.png
+Configuring CloudFront Distribution
+
+Screenshot: create cloudfront.png
+Screenshot: cloudfront with alb origin.png
+Let me know if these align well with your workflow for Steps 1-3. If this organization works, I’ll prepare similar placements for Steps 4 and 5.
+
+
+
+
+
+
+You said:
+this is great. please do Steps 4 and 5
+ChatGPT said:
+ChatGPT
+Here's the screenshot organization for Steps 4 and 5 with each image placed in the appropriate part of the workflow:
+
+Step 4: Enabling S3 Logging, Config Rules, and Amazon Inspector
+Creating S3 Bucket for Logs and Configuring Permissions
+
+Screenshot: create s3 bucket for logs.png
+Screenshot: access logs myff log bucket.png
+Enabling ALB and CloudFront Access Logs
+
+Screenshot: ALB access log config.png
+Screenshot: cloudfront logging config.png
+Setting Up AWS Config Rules for Security Checks
+
+Screenshot: aws config rules setup.png
+Screenshot: config rules non compliant.png
+Amazon Inspector Setup for Vulnerability Scanning
+
+Screenshot: inspector running.png
+Screenshot: inspector findings.png
+Step 5: Adding WAF Web ACL and Testing the Rate-Based Rule
+Creating the WAF Web ACL for CloudFront
+
+Screenshot: create waf web acl.png
+Screenshot: rate based rule waf.png
+Testing the WAF Rule via CloudShell Command
+
+Screenshot: cloudshell waf test.png
+Screenshot: waf rule triggered.png
