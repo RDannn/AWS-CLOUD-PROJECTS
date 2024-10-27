@@ -365,7 +365,7 @@ Open CloudFront > Distribution, go to Origins, select Edit.
 Add a Custom Header:
 Header Name: "FF-Custom-Header"
 Header Value: "value-246810"
-![ADDCUSTOMHEADCF Services Screenshot](screenshots/addcustomheadcf.png.png)
+![ADDCUSTOMHEADCF Services Screenshot](screenshots/addcustomheadcf.png)
 Save changes.
 
 
@@ -374,7 +374,7 @@ Save changes.
 In EC2 under Load Balancers, select ALB1 > Listeners and Rules.
 Select the HTTPS:443 listener and go to Manage Rules, "Add Rule".
 Input "http header" for the name then click Next.
-![HTTPA Services Screenshot](screenshots/httpa.png.png)
+![HTTPA Services Screenshot](screenshots/httpa.png)
 
 
 
