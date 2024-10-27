@@ -1,8 +1,16 @@
+![Architecture Diagram](CA.jpeg)
+
+
 Step 1: Initial Setup
 Follow these setup instructions:
 Navigate to EC2 in the AWS Console (N. Virginia region preferred). Ensure full administrative access.
+![EC2 Services Screenshot](screenshots/ec2services.png)
+
 Under "Network & Security," create a new security group:
 frontendALB:
+![FESGC Services Screenshot](screenshots/fesgc.png)
+
+
 Inbound Rule: HTTPS, Source: Anywhere (IPv4)
 Outbound Rule: HTTP to allow secure traffic forwarding to backend EC2 instances.
 backendEC2:
