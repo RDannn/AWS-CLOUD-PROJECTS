@@ -1,4 +1,4 @@
-![Architecture Diagram](CA.jpeg)
+![Architecture Diagram](cloudappdia.jpg)
 
 
 Step 1: Initial Setup
