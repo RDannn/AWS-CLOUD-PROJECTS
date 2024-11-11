@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Nine Airlines - Flight Status Reminder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Cloud Nine Airlines</h1>
+        <p>Stay Updated on Your Flight Status with Our Reminder Service</p>
+    </header>
+
+    <main>
+        <section class="form-section">
+            <h2>Flight Status Reminder</h2>
+            <form id="reminderForm">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your email">
+                
+                <label for="flightNumber">Flight Number:</label>
+                <input type="text" id="flightNumber" name="flightNumber" required placeholder="Enter flight number">
+                
+                <label for="date">Flight Date:</label>
+                <input type="date" id="date" name="date" required>
+                
+                <label for="waitSeconds">Reminder Delay (in seconds):</label>
+                <input type="number" id="waitSeconds" name="waitSeconds" min="0" required placeholder="Enter delay in seconds">
+
+                <button type="submit">Set Flight Status Reminder</button>
+            </form>
+            <p id="statusMessage"></p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2024 Cloud Nine Airlines. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById("reminderForm");
+        const statusMessage = document.getElementById("statusMessage");
+
+        form.addEventListener("submit", async (event) => {
+            event.preventDefault();
+            statusMessage.textContent = "Setting reminder, please wait...";
+
+            // Collect the input values
+            const email = document.getElementById("email").value;
+            const flightNumber = document.getElementById("flightNumber").value;
+            const date = document.getElementById("date").value;
+            const waitSeconds = parseInt(document.getElementById("waitSeconds").value);
+
+            try {
+                // Send a POST request to the API Gateway endpoint
+                const response = await fetch("YOUR_API_GATEWAY_URL", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ email, flightNumber, date, waitSeconds })
+                });
+
+                // Handle the response
+                if (response.ok) {
+                    statusMessage.textContent = "Reminder set successfully!";
+                } else {
+                    statusMessage.textContent = "Error: Unable to set reminder.";
+                }
+            } catch (error) {
+                statusMessage.textContent = "Error: Network issue, please try again.";
+            }
+        });
+    </script>
+</body>
+</html>
