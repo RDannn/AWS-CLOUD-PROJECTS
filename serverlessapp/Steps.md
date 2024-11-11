@@ -1,4 +1,4 @@
-screenshots/serverless.drawio.png
+![Serverless Architecture Diagram](screenshots/serverless.drawio.png)
 
 
 
@@ -14,7 +14,7 @@ Click Create Identity and select Email Address.
 Enter your sending and customer test email addresses (these will both need to be verified).
 Follow the email verification link sent to your provided address.
 Verify Successful Setup: Return to the SES Console, refresh the page, and confirm both emails are verified.
-screenshots/sesidentities.png
+![SES Identity Verification](screenshots/sesidentities.png)
 
 
 Step 2: Create IAM Role and Lambda Function for Email Notifications
@@ -25,13 +25,13 @@ Navigate to IAM Console: Search for IAM in the AWS Console.
 Create Role:
 Select Lambda as the service.
 Name the role snsstatesescw and click Create Role.
-screenshots/snsesrole.png
+![SNS and SES Role Configuration](screenshots/snsesrole.png)
 
 Add Permissions:
 Attach JSON policies for SES and CloudWatch access:
 Create an inline policy for SES with the necessary permissions.
 Repeat for CloudWatch, enabling Lambda logging.
-screenshots/cwlogspermiss.png
+![CloudWatch Logs Permissions](screenshots/cwlogspermiss.png)
 
 Part B: Develop Lambda Function for Email
 Go to Lambda: Create a new Lambda function with the name cnemailreminder.
@@ -40,10 +40,10 @@ Add Code: Copy the cnemailreminder.py code (ensuring you replace REPLACE_ME with
 Deploy and Test: Deploy the function to finalize configuration.
 This function is invoked to send customized flight notifications via SES, using details supplied by Step Functions.
 Overview of cnemailreminder.py (Lambda Function for SES Email Sending)
-screenshots/fromemaillambda.png
+![From Email Lambda Setup](screenshots/fromemaillambda.png)
 
 
-screenshots/snssespermissions.png
+![SNS and SES Permissions Setup](screenshots/snssespermissions.png)
 
 Purpose: Sends an email via SES, notifying users about their flight status.
 Intent: This function reinforces customer service by providing real-time flight updates.
@@ -60,7 +60,7 @@ Formatting: Email content is structured to highlight flight details.
 SES Call: The function interacts with SES to send emails efficiently.
 Exception Handling: Manages potential SES issues, enhancing reliability.
 With this function, users receive timely flight reminders, enhancing the customer experience for Cloud Nine Airlines.
-screenshots/cloudninereminderlambda.png
+![Cloud Nine Reminder Lambda Setup](screenshots/cloudninereminderlambda.png)
 
 
 Step 3: Configure IAM Role and Step Functions State Machine
@@ -72,10 +72,10 @@ Permissions:
 Add permissions for Step Functions to invoke Lambda.
 Add CloudWatch logging permissions to monitor the state machine.
 Name the role statemachinerole.
-screenshots/snspolicy.png
+![SNS Policy](screenshots/snspolicy.png)
 
 
-screenshots/cwlogspolicy.png
+![CloudWatch Logs Policy](screenshots/cwlogspolicy.png)
 
 Part B: Build Step Functions State Machine
 Access Step Functions: Create a new state machine with a blank template.
@@ -86,9 +86,16 @@ Configure and Deploy:
 Name the state machine cnstatemachine, select the statemachinerole, and enable detailed CloudWatch logging.
 Save the ARN for this state machine for future steps.
 This controls the flow of notifications, coordinating between AWS services to ensure timely communication with users.
-screenshots/stepmachinerole.png
+![Step Function Role](screenshots/stepmachinerole.png)
 
 
+![Step Machine Blank](screenshots/stepmachineblank.png)
+
+
+![Step Machine Visual](screenshots/stepmachinevisual.png)
+
+
+![Step Function CloudWatch Logs](screenshots/stepfucntioncwlogs.png)
 
 Overview of State Machine Logic:
 
@@ -121,6 +128,21 @@ Lambda Handler:
 Validates input fields (email, flight number, etc.).
 Trigger State Machine: Calls Step Functions to initiate the reminder workflow.
 Error Handling: Manages issues with data validation or Step Function invocation.
+![API Lambda](screenshots/api_lambda.png)
+
+![API Lambda](screenshots/apilambda.png)
+
+
+![Post API](screenshots/postapi.png)
+
+
+![REST API](screenshots/restapi.png)
+
+
+![API Path](screenshots/apipath.png)
+
+
+![Dev Stage](screenshots/devstage.png)
 
 
 
@@ -136,6 +158,14 @@ Overview of index.html (Static HTML Form)
 
 Purpose: Provides a user-friendly interface for customers to enter their flight details.
 Intent: Simplifies data input for customers to request flight status reminders.
+![S3 Bucket](screenshots/s3bucket.png)
+
+
+![S3 Public Policy](screenshots/s3publicpolicy.png)
+
+
+![S3 Index HTML](screenshots/s3indexhtml.png)
+
 Code Breakdown:
 
 HTML Structure:
@@ -155,4 +185,27 @@ Purpose: Ensure functionality and troubleshoot any issues.
 Test Workflow: Open the website, submit a flight status request, and verify that notifications are sent as expected.
 Monitor Logs: Use CloudWatch Logs to track Lambda execution and Step Functions flow.
 Confirm SES Delivery: Ensure SES successfully sends emails.
+![State Machine Execution](screenshots/statemachineexecution.png)
+
+
+![Step Function Step](screenshots/stepfunctionstep.png)
+
+
+![Step Function Visual Success](screenshots/stepfuncvisualsucc.png)
+
+
+![Step Function Success](screenshots/stepfunctionsucc.png)
+
+
+![Serverless Success](screenshots/serverless_success.PNG)
+
+
+![Cloud Nine Form 120 Sec](screenshots/clooudnineform120sec.png)
+
+
+
+![Cloud Nine Form Success](screenshots/cloudnineformsuccess.png)
+
+
+
 This project showcases the complete architecture of a serverless application, highlighting proficiency with AWS services, IAM policies, and step-by-step integration for a professional customer experience.
