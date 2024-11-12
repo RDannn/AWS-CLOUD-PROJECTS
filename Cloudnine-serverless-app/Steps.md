@@ -3,6 +3,10 @@
 
 
 Cloud Nine Airlines Serverless Flight Status Application
+
+
+
+
 Welcome to another Cloud Nine Airlines Project! In this project, we’ll implement a serverless application using S3, API Gateway, Lambda, Step Functions, and SES to send flight status notifications to Cloud Nine Airlines customers. Users can access a static website, fill out a form with their email, flight number, travel date, and a wait time. After submitting, they’ll receive an email with the flight status. This project demonstrates the integration and orchestration of AWS services in a real-world scenario.
 
 Step 1: Configure SES to Verify Email Addresses
