@@ -3,6 +3,10 @@
 
 
 
+![Raglex Diagram](ss/Raglexdiagram.jpg)
+
+
+
 ✈️ AI-Powered Chatbot with Amazon Lex and Bedrock
 For Cloud Nine Airlines: Query Travel Policies with AI.
 
