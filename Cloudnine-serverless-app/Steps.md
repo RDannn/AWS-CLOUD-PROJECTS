@@ -204,11 +204,13 @@ Confirm SES Delivery: Ensure SES successfully sends emails.
 ![Serverless Success](screenshots/serverless_success.PNG)
 
 
-![Cloud Nine Form 120 Sec](screenshots/clooudnineform120sec.png)
+<img width="1430" alt="clooudnineform120sec" src="https://github.com/user-attachments/assets/052aa595-ff18-44d9-ba54-35862b57c888" />
 
 
 
-![Cloud Nine Form Success](screenshots/cloudnineformsuccess.png)
+
+<img width="1430" alt="cloudnineformsuccess" src="https://github.com/user-attachments/assets/95a8b53d-fd3c-4d0b-86c4-6e7296a66dd9" />
+
 
 
 
